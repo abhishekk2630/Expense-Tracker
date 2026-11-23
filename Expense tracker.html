@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PocketLedger</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="dashboard-wrap">
+    <!-- Virtual Card -->
+    <section class="virtual-card">
+      <div class="card-top"><span class="bank-tag">⚡ POCKET LEDGER</span><span class="card-chip">💳</span></div>
+      <div class="card-balance"><p class="balance-label">AVAILABLE LIQUIDITY</p><h1 id="net-balance">₹0.00</h1></div>
+      <div class="card-bottom">
+        <div><span>INFLOW</span><strong id="inflow-val">+₹0.00</strong></div>
+        <div class="text-right"><span>OUTFLOW</span><strong id="outflow-val">-₹0.00</strong></div>
+      </div>
+    </section>
+
+    <!-- Budget Meter -->
+    <section class="spend-meter">
+      <div class="meter-labels"><span>Budget Burn Rate</span><span id="burn-percentage">0% spent</span></div>
+      <div class="meter-bar"><div id="meter-fill" class="meter-fill"></div></div>
+    </section>
+
+    <!-- Form Panel -->
+    <section class="action-panel">
+      <form id="tx-form">
+        <div class="type-toggle">
+          <label class="toggle-btn active"><input type="radio" name="tx-type" value="expense" checked><span>- Expense</span></label>
+          <label class="toggle-btn"><input type="radio" name="tx-type" value="income"><span>+ Income</span></label>
+        </div>
+        <div class="input-grid">
+          <input type="text" id="tx-title" placeholder="Description (e.g. Lunch)" required>
+          <input type="number" id="tx-amount" placeholder="Amount (₹)" min="0.01" step="any" required>
+        </div>
+        <div class="category-pills">
+          <label><input type="radio" name="cat" value="🍔 Food" checked><span>🍔 Food</span></label>
+          <label><input type="radio" name="cat" value="⚡ Bills"><span>⚡ Bills</span></label>
+          <label><input type="radio" name="cat" value="💼 Work"><span>💼 Work</span></label>
+          <label><input type="radio" name="cat" value="🛍️ Shop"><span>🛍️ Shop</span></label>
+          <label><input type="radio" name="cat" value="📦 Misc"><span>📦 Misc</span></label>
+        </div>
+        <button type="submit" class="submit-btn">+ Save Transaction</button>
+      </form>
+    </section>
+
+    <!-- Activity Feed -->
+    <section class="log-section">
+      <div class="log-header"><h3>Recent Activity</h3><span id="entry-count" class="count-badge">0 items</span></div>
+      <ul id="activity-feed" class="activity-feed"></ul>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

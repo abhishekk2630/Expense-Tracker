@@ -1,0 +1,49 @@
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: system-ui, sans-serif; }
+body { background: #090d16; color: #f8fafc; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding: 20px; }
+.dashboard-wrap { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 14px; }
+
+/* 1. Virtual Card */
+.virtual-card { background: linear-gradient(135deg, #1e1b4b, #4338ca); border-radius: 18px; padding: 20px; border: 1px solid #ffffff26; box-shadow: 0 10px 25px #4338ca40; }
+.card-top, .card-bottom { display: flex; justify-content: space-between; align-items: center; font-size: 11px; font-weight: 700; opacity: 0.9; }
+.card-balance { margin: 14px 0; }
+.balance-label { font-size: 10px; opacity: 0.7; letter-spacing: 1px; }
+.card-balance h1 { font-size: 30px; font-weight: 800; }
+#inflow-val { color: #34d399; }
+#outflow-val { color: #fca5a5; }
+.text-right { text-align: right; }
+
+/* 2. Budget Meter & Card Panels */
+.spend-meter, .action-panel, .log-section { background: #131b2e; border: 1px solid #263554; border-radius: 16px; padding: 14px 16px; }
+.meter-labels, .log-header { display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8; font-weight: 600; margin-bottom: 8px; }
+.meter-bar { height: 7px; background: #1e2942; border-radius: 99px; overflow: hidden; }
+.meter-fill { height: 100%; width: 0%; background: linear-gradient(90deg, #10b981, #f59e0b, #f43f5e); transition: width 0.3s; }
+
+/* 3. Form & Category Pills */
+.type-toggle { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; background: #1e2942; padding: 3px; border-radius: 8px; margin-bottom: 10px; }
+.type-toggle label { text-align: center; padding: 6px; font-size: 12px; font-weight: 600; cursor: pointer; color: #94a3b8; border-radius: 6px; }
+.type-toggle input, .category-pills input { display: none; }
+.type-toggle label.active { background: #6366f1; color: #fff; }
+
+.input-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 8px; margin-bottom: 8px; }
+input[type="text"], input[type="number"] { background: #1e2942; border: 1px solid #263554; border-radius: 8px; padding: 9px; color: #fff; font-size: 13px; outline: none; }
+input:focus { border-color: #6366f1; }
+
+.category-pills { display: flex; gap: 5px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 10px; }
+.category-pills span { display: inline-block; background: #1e2942; border: 1px solid #263554; padding: 4px 8px; border-radius: 20px; font-size: 11px; cursor: pointer; white-space: nowrap; }
+.category-pills input:checked + span { background: #6366f140; border-color: #6366f1; color: #fff; }
+
+.submit-btn { width: 100%; background: #6366f1; color: #fff; border: none; padding: 10px; border-radius: 8px; font-weight: 700; cursor: pointer; }
+.submit-btn:hover { opacity: 0.9; }
+
+/* 4. Activity List */
+.count-badge { background: #1e2942; font-size: 10px; padding: 2px 7px; border-radius: 10px; color: #94a3b8; }
+.activity-feed { list-style: none; max-height: 150px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; }
+.activity-feed li { display: flex; justify-content: space-between; align-items: center; padding: 8px 10px; background: #1e2942; border-radius: 8px; font-size: 13px; }
+.item-meta { display: flex; flex-direction: column; }
+.item-title { font-weight: 600; }
+.item-category { font-size: 10px; color: #94a3b8; }
+.item-right { display: flex; align-items: center; gap: 8px; }
+.amount-val.income { color: #10b981; font-weight: 700; }
+.amount-val.expense { color: #f43f5e; font-weight: 700; }
+.trash-btn { background: none; border: none; color: #94a3b8; cursor: pointer; font-size: 13px; }
+.trash-btn:hover { color: #f43f5e; }
